@@ -10,9 +10,9 @@ const connection = mysql.createConnection({
 });
 
 connection.connect
-start();
+begin();
 
-function start() {
+function begin() {
     inquirer
         .prompt({
             type: "list",
@@ -62,7 +62,7 @@ function viewAllDepartments() {
     connection.query(query, (err, res) => {
         if (err) throw err;
         console.table(res);
-        start();
+        begin();
     });
 }
 
@@ -71,7 +71,7 @@ function viewAllRoles() {
     connection.query(query, (err, res) => {
         if (err) throw err;
         console.table(res);
-        start();
+        begin();
     });
 }
 
@@ -85,7 +85,7 @@ function viewAllEmployees() {
     connection.query(query, (err, res) => {
         if (err) throw err;
         console.table(res);
-        start();
+        begin();
     });
 }
 
@@ -103,7 +103,7 @@ function addDepartment() {
                 if (err) throw err;
                 console.log(`Added department ${answer.name} to the database!`);
 
-                start();
+                begin();
                 console.log(answer.name);
             });
         });
@@ -152,7 +152,7 @@ function addRole() {
                             `Added ${answers.title} with salary ${answers.salary} to the ${answers.department} department in the database!`
                         );
 
-                        start();
+                        begin();
                     }
                 );
             });
@@ -228,7 +228,7 @@ function addEmployee() {
                             }
 
                             console.log("Added employee successfully");
-                            start();
+                            begin();
                         });
                     })
                     .catch((error) => {
@@ -285,7 +285,7 @@ function updateEmployeeRole() {
                                 `Updated ${employee.first_name} ${employee.last_name}'s role to ${role.title} in the database!`
                             );
 
-                            start();
+                            begin();
                         }
                     );
                 });
@@ -333,7 +333,7 @@ function viewEmployeesByManager() {
                 );
             });
         }
-        start();
+        begin();
     });
 }
 
@@ -345,7 +345,7 @@ function viewEmployeesByDepartment() {
         if (err) throw err;
         console.log("\nEmployees by department:");
         console.table(res);
-        start();
+        begin();
     });
 }
 
@@ -380,7 +380,7 @@ function viewBudgetOfDepartment() {
                     console.log(
                         `The total salary for this department is $${totalSalary}`
                     );
-                    start();
+                    begin();
                 });
             });
     });
