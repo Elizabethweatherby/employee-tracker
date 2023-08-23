@@ -1,15 +1,15 @@
-DROP DATABASE IF EXISTS employeeTracker_db;
-CREATE DATABASE employeeTracker_db;
-USE employeeTracker_db;
+DROP DATABASE IF EXISTS schoolEmployee_db;
+CREATE DATABASE schoolEmployee_db;
+USE schoolEmployee_db;
 
-CREATE TABLE department (
+CREATE TABLE departments (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 department_name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE employee_role (
+CREATE TABLE roles (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-title VARCHAR(255),
+title VARCHAR(30),
 salary DECIMAL(10,2),
 department_id INT,
 FOREIGN KEY (department_id)

@@ -1,4 +1,4 @@
-INSERT INTO department (department_name)
+INSERT INTO departments (department_name)
 VALUES
     ('Maintenance'),
     ('Janitorial'),
@@ -7,19 +7,19 @@ VALUES
     ('Athletics'),
     ('Kitchen Staff');
 
-INSERT INTO employee_role (title, salary, department_id)
+INSERT INTO roles (title, salary, department_id)
 VALUES
   ('Math Teacher', '50000', 3),
   ('Principle', '150000', 4),
-  ('Cook, 25000, 6'),
+  ('Cook', '25000', 6),
   ('Secretary', '48000', 4),
   ('Handyman', '45000', 1),
   ('Basketball Coach', '40000', 5),
-  ('History Teacher, 58000, 3'),
+  ('History Teacher', '58000', 3),
   ('Janitor', '20000', 2),
-  ('Science Teacher, 55000, 3'),
+  ('Science Teacher', '55000', 3),
   ('Football Coach', '65000', 5),
-  ('Vice Principle, 100000, 4');
+  ('Vice Principle', '100000', 4);
     
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES
@@ -31,6 +31,6 @@ VALUES
   ('Kenneth', 'Golding', 6, 2),
   ('Susan', 'Foster', 9, 2),
   ('Barry', 'Kessler', 11, 2),
-  ('James', 'Voss', 2, NULL),
+  ('James', 'Voss', 2, 11),
   ('Sally', 'Rogers', 8, 11),
   ('Ashley', 'Taylor', 4, 2);
