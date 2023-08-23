@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-
+const connection = require("mysql2");
 connection.connect
 begin();
 
